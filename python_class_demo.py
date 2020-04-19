@@ -17,3 +17,16 @@ class Person:
 
     def print_detail(self):
         print(f"I am {self.name}, {self.age} years old")
+
+    # we can define method to set and get values like setter and getter in other languages
+    def set_name(self, name):
+        self.name = name
+
+    def set_age(self, age):
+        self.age = age
+
+    def get_name(self):
+        return self.name
+
+    def get_age(self):
+        return self.age
