@@ -1,4 +1,4 @@
-from python_class_demo import Person
+from python_class_demo import Person, Student
 
 # create instance of class
 a_person = Person("Ibraham", 43)
@@ -21,3 +21,8 @@ b_person.set_age(2)
 print("Values after updating via methods")
 print("New Name: "+b_person.get_name())
 print(f"New Age: {b_person.get_age()}")
+
+
+# demo Student class
+std = Student("Rafeel",21,"s-343")
+std.print_detail()

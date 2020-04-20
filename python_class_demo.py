@@ -30,3 +30,18 @@ class Person:
 
     def get_age(self):
         return self.age
+
+# INHERITANCE
+# for inheritance parent class must part of current file and appear before child class
+
+class Student(Person):      # parent class name should be given in para
+    def __init__(self,name,age,roll_no):
+        super().__init__(name,age)
+        self.roll_no = roll_no
+
+    # we can override parent class method
+    def print_detail(self):
+        # we can write all detail here or can also call parent method too
+        super().print_detail()
+        print("My roll is "+str(self.roll_no))
+
