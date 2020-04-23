@@ -26,3 +26,4 @@ print(f"New Age: {b_person.get_age()}")
 # demo Student class
 std = Student("Rafeel",21,"s-343")
 std.print_detail()
+print(std)

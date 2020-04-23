@@ -31,12 +31,23 @@ class Person:
     def get_age(self):
         return self.age
 
+    # change string representation of this class instance
+    # this representation is used by str() and print() function
+    def __str__(self):
+        return (f'{self.name},{self.age}')
+
+    # __repr__ method returns the code representation of an instance, 
+    # usually the text used to re-create the instance of class
+    def __repr__(self):
+        # return (f'Student{self.name,self.age}')
+        return 'Student(%r,%r)' % (self.name, self.age)
+
 # INHERITANCE
 # for inheritance parent class must part of current file and appear before child class
 
 class Student(Person):      # parent class name should be given in para
-    def __init__(self,name,age,roll_no):
-        super().__init__(name,age)
+    def __init__(self, name, age, roll_no):
+        super().__init__(name, age)
         self.roll_no = roll_no
 
     # we can override parent class method
@@ -44,4 +55,3 @@ class Student(Person):      # parent class name should be given in para
         # we can write all detail here or can also call parent method too
         super().print_detail()
         print("My roll is "+str(self.roll_no))
-
