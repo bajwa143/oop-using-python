@@ -1,4 +1,7 @@
 from python_class_demo import Person, Student
+# we can also use '*' to import all classes from a module
+#from python_class_demo import *
+# but it is not recommend, because it is not clear which classes we are importing and using
 
 # create instance of class
 a_person = Person("Ibraham", 43)

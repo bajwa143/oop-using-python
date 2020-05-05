@@ -5,7 +5,7 @@
 # looks for when it generates documentation for the functions in your programs
 # it is like java docs but write within function defination
 
-
+"""Person class to represent a person - a module-level docstring"""
 class Person:
     """ Person class to model any person """
 
@@ -45,9 +45,11 @@ class Person:
 # INHERITANCE
 # for inheritance parent class must part of current file and appear before child class
 
-class Student(Person):      # parent class name should be given in para
+class Student(Person):      # parent class name should be given in parameter
     def __init__(self, name, age, roll_no):
-        super().__init__(name, age)
+        # initialize variables in parent class
+        super().__init__(name, age) # super() is used to make connection/call to parent class
+                                    # something like super in Java and base in C#
         self.roll_no = roll_no
 
     # we can override parent class method
