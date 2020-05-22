@@ -52,3 +52,6 @@ print(f"New Age: {b_person.get_age()}")
 std = Student("Rafeel",21,"s-343")
 std.print_detail()
 print(std)
+
+# print total count
+print("Total instance created are {}".format(Person.total_count))

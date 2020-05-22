@@ -31,11 +31,22 @@ SOFTWARE.
 class Person:
     """ Person class to model any person """
 
+    # class variables are defined within the class construction
+    # they are owned by the class itself and shared by all instances of the class
+    # class variables generally have the same value for every instance unless we change
+    # defined outside of all the methods, class variables are, by convention,
+    # typically placed right below the class header and before the constructor method
+
+    # our class variable
+    total_count = 0
+
     def __init__(self, name, age=1):    # default value for age
         """ initialize Person """
         # self must be first parameter, it give access to member variable and methods of class
         self.name = name
         self.age = age
+        # increment class counter for each instance created
+        Person.total_count += 1
 
     def print_detail(self):
         print(f"I am {self.name}, {self.age} years old")
