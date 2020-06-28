@@ -28,7 +28,8 @@ SOFTWARE.
 # it is like java docs but write within function defination
 
 """Person class to represent a person - a module-level docstring"""
-class Person:
+
+class Person:       # we can put paranthsis too as "class Person():"
     """ Person class to model any person """
 
     # class variables are defined within the class construction
@@ -43,8 +44,14 @@ class Person:
     def __init__(self, name, age=1):    # default value for age
         """ initialize Person """
         # self must be first parameter, it give access to member variable and methods of class
-        self.name = name
-        self.age = age
+        # self is like a dictionary of class attributes and attribute values
+
+        # Python does not distinguish between private and public variables like other languages
+        # therefore if we want that class attribute should be access through class method,
+        # convention is to use '_' in front of class attribute, so programmer can know that
+        # this variable should only be access through getter and setter instead of direct access
+        self._name = name
+        self._age = age
         # increment class counter for each instance created
         Person.total_count += 1
 
@@ -69,7 +76,7 @@ class Person:
     def __str__(self):
         return (f'{self.name},{self.age}')
 
-    # __repr__ method returns the code representation of an instance, 
+    # __repr__ method returns the code representation of an instance,
     # usually the text used to re-create the instance of class
     def __repr__(self):
         # return (f'Student{self.name,self.age}')
@@ -82,7 +89,7 @@ class Student(Person):      # parent class name should be given in parameter
     def __init__(self, name, age, roll_no):
         # initialize variables in parent class
         super().__init__(name, age) # super() is used to make connection/call to parent class
-                                    # something like super in Java and base in C#
+        # something like super in Java and base in C#
         self.roll_no = roll_no
 
     # we can override parent class method
