@@ -18,6 +18,13 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+Person class to represent a person - a module-level docstring
+
+Todos:
+    * Visit below website and update docstrings
+    * https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html
+
 """
 
 # name rules for class are same as for variables in python
@@ -26,8 +33,6 @@ SOFTWARE.
 # Docstrings are enclosed in triple quotes, which Python
 # looks for when it generates documentation for the functions in your programs
 # it is like java docs but write within function defination
-
-"""Person class to represent a person - a module-level docstring"""
 
 class Person:       # we can put paranthsis too as "class Person():"
     """ Person class to model any person """
@@ -42,7 +47,13 @@ class Person:       # we can put paranthsis too as "class Person():"
     total_count = 0
 
     def __init__(self, name, age=1):    # default value for age
-        """ initialize Person """
+        """ initialize Person class object
+
+        Args:
+            name(str): Name of person
+            age(int): age of person
+
+        """
         # self must be first parameter, it give access to member variable and methods of class
         # self is like a dictionary of class attributes and attribute values
 
@@ -56,31 +67,43 @@ class Person:       # we can put paranthsis too as "class Person():"
         Person.total_count += 1
 
     def print_detail(self):
-        print(f"I am {self.name}, {self.age} years old")
+        """Print detail description of person
+
+        Returns: None
+        """
+        print(f"I am {self._name}, {self._age} years old")
 
     # we can define method to set and get values like setter and getter in other languages
     def set_name(self, name):
+        """ Set name of Person
+        
+        Args:
+            name (str): name of person
+
+        Returns:
+            None
+        """
         self.name = name
 
     def set_age(self, age):
-        self.age = age
+        self._age = age
 
     def get_name(self):
-        return self.name
+        return self._name
 
     def get_age(self):
-        return self.age
+        return self._age
 
     # change string representation of this class instance
     # this representation is used by str() and print() function
     def __str__(self):
-        return (f'{self.name},{self.age}')
+        return (f'{self._name},{self._age}')
 
     # __repr__ method returns the code representation of an instance,
     # usually the text used to re-create the instance of class
     def __repr__(self):
         # return (f'Student{self.name,self.age}')
-        return 'Student(%r,%r)' % (self.name, self.age)
+        return 'Student(%r,%r)' % (self._name, self._age)
 
 # INHERITANCE
 # for inheritance parent class must part of current file and appear before child class
