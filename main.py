@@ -20,7 +20,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-from python_class_demo import Person, Student
+from python_class_demo import Person, Student, Teacher, Manager
 # we can also use '*' to import all classes from a module
 #from python_class_demo import *
 # but it is not recommend, because it is not clear which classes we are importing and using
@@ -55,3 +55,13 @@ print(std)
 
 # print total count
 print("Total instance created are {}".format(Person.total_count))
+
+# create teacher class to demo mixin
+tch = Teacher("Saad",34,23000)
+tch.print_detail()
+tch.draw_salary(18000)
+
+# Manager class
+mgr = Manager("Raza",40,20000)
+mgr.print_detail()
+mgr.draw_salary(18000)

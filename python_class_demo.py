@@ -26,7 +26,7 @@ Todos:
     * https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html
 
 """
-
+from mixin import SalaryMixin
 # name rules for class are same as for variables in python
 # use of capital letter for class is convention
 
@@ -120,3 +120,30 @@ class Student(Person):      # parent class name should be given in parameter
         # we can write all detail here or can also call parent method too
         super().print_detail()
         print("My roll is "+str(self.roll_no))
+
+# Create additional class that inherit from person, but Teacher has Salary
+class Teacher(Person,SalaryMixin):
+    def __init__(self, name = "no name", age = 1, salary=100):
+        # initialize variables in parent class
+        super().__init__(name, age)
+        self.salary = salary
+    # we can override parent class method
+    def print_detail(self):
+        # we can write all detail here or can also call parent method too
+        super().print_detail()
+        print("My salary is "+str(self.salary))
+
+# A manager is also a person with Salary
+# To add salary functionality in both and Teacher and Manager class we define a SalaryMixin class in mixin.py file\
+# then inherit both class from SalaryMixin too and can call draw_salary on both
+class Manager(Person,SalaryMixin):
+    def __init__(self, name = "no name", age = 1, salary=100):
+        # initialize variables in parent class
+        super().__init__(name, age)
+        self.salary = salary
+
+    def print_detail(self):
+        # we can write all detail here or can also call parent method too
+        super().print_detail()
+        print("My salary is "+str(self.salary))
+
